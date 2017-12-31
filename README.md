@@ -1,9 +1,7 @@
-# ng2-google-place-autocomplete
-This is a Google-Autocomplete Module for Angular.
+# angular-google-place
+This is a Angular-Google-Place Module publish with Angular Format Package ( ng-packgr)
 
-[![NPM](https://nodei.co/npm/ng2-google-place-autocomplete.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/ng2-google-place-autocomplete/)
-
-# Build with angular-cli 1.0.0-beta.31 and @angular 2.4.7
+[![NPM](https://nodei.co/npm/angular-google-place.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/angular-google-place/)
 
 [![devDependency Status](https://gemnasium.com/badges/github.com/psykolm22/angular-google-place.svg)](https://gemnasium.com/github.com/psykolm22/ng2-google-place-autocomplete) [![npm](http://img.shields.io/npm/v/angular-google-place.svg?style=flat)](https://www.npmjs.org/package/angular-google-place) [![license](https://img.shields.io/github/license/psykolm22/angular-google-place.svg)]()
 
@@ -29,7 +27,7 @@ YARN
 ```
 
 # Usage
-* Use it in your HTML elements, for example:
+* Use it in your HTML elements, for example in your ***.component.html:
 ```html
 <input type="text" [(ngModel)] = "address" 
  [options]='options' 
@@ -56,9 +54,19 @@ YARN
   id="autocomplete"
  angularGooglePlace/> 
 ```
+* Add in your ***.component.ts:
+```typeScript
+import { Address } from 'angular-google-place';
 
+ export class AppComponent {
+  public options = {types: ['address'], componentRestrictions: { country: 'FR' }};
+  getAddress(place: Address) {
+         console.log('Address', place);
+     }
+}
+```
 
-* Add GooglePlaceModule in your app.module.ts:
+* Add GooglePlaceModule in your ***.module.ts:
 ```typeScript
 import {AngularGooglePlaceModule} from 'angular-google-place';
 
@@ -81,6 +89,8 @@ Options for Google Search
     componentRestrictions: { country: 'FR' }
     }"
 ```
+
+
 #Tested in:
 * Chrome
 * Firefox
