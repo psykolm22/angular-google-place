@@ -1,9 +1,11 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+
+import { AngularGooglePlaceModule} from 'angular-google-place';
 
 import { AppComponent } from './app.component';
-import { AngularGooglePlaceModule} from '@angular-google-place';
+
 
 @NgModule({
   declarations: [

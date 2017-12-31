@@ -1,0 +1,9 @@
+{
+    "name": "{pkg-name}",
+    "version": "{version}",
+    "peerDependencies": {
+        "@angular/core": "^4.0.0 || ^5.0.0",
+        "@angular/common": "^4.0.0 || ^5.0.0"
+    },
+    "dependencies": {}
+}

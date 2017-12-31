@@ -10,7 +10,7 @@
 
 </div>
 <select class="form-control" [(ngModel)]="options.componentRestrictions.country">
-<option *ngFor="let country of CountryCodes" [value]="country.Code">{{country.Name}}</option>
+<option *ngFor="let country of CountryCodes" [value]="country.Code">{{ country.Name }}</option>
 </select>
 
 <table id="address">
@@ -70,7 +70,7 @@
     </tr>
     <tr>
         <td class="label">url</td>
-        <td class="wideField" colspan="3"><a href='{{url}}'> {{url}} </a></td>
+        <td class="wideField" colspan="3"><a href='{{url}}'> {{ url }} </a></td>
     </tr>
     <tr>
         <td class="label">utc_offset</td>
@@ -88,7 +88,7 @@
             <img [src]="photo.getUrl({'maxWidth': 200, 'maxHeight': 200})">
             <div class="desc">
                 <div [innerHTML]="url"></div>
-                <div> Original Size - width : {{photo.width}} height : {{photo.height}}</div>
+                <div> Original Size - width : {{ photo.width }} height : {{ photo.height }}</div>
             </div>
         </div>
     </div>

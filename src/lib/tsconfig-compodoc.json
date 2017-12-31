@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "include": [
+        "angular-google-place/**/**/*.*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "doc",
+        "demo",
+        "test",
+        "karma.conf.ts",
+        "webpack.config.ts"
+    ]
+}
