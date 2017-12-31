@@ -5,7 +5,7 @@ This is a Angular-Google-Place Module publish with Angular Format Package ( ng-p
 
 [![devDependency Status](https://gemnasium.com/badges/github.com/psykolm22/angular-google-place.svg)](https://gemnasium.com/github.com/psykolm22/ng2-google-place-autocomplete) [![npm](http://img.shields.io/npm/v/angular-google-place.svg?style=flat)](https://www.npmjs.org/package/angular-google-place) [![license](https://img.shields.io/github/license/psykolm22/angular-google-place.svg)]()
 
-[Docs](https://psykolm22.github.io/angular-google-place) | [Demo](https://psykolm22.github.io/) 
+[Docs](https://psykolm22.github.io/angular-google-place) | [Demo](https://psykolm22.github.io/angular-google-place/) 
 
 # GitHub
 Please feel free to declare issues or contribute  : https://github.com/psykolm22/angular-google-place

@@ -1,6 +1,8 @@
 {
     "name": "{pkg-name}",
     "version": "{version}",
+    "license": "MIT",
+    "author": "Pierre Nédélec",
     "peerDependencies": {
         "@angular/core": "^4.0.0 || ^5.0.0",
         "@angular/common": "^4.0.0 || ^5.0.0"
