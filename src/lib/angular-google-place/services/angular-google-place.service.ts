@@ -13,7 +13,7 @@ export class AngularGooglePlaceService {
     for (const attr of address_components) {
       for (const type of attr.types) {
         if (type === query) {
-          return val ? attr[val] : attr;
+          return val ? (<any>attr)[val] : attr;
         }
       }
     }

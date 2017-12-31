@@ -25,6 +25,7 @@
         "@angular/router": "5.1.2",
         "angular-google-place": "file:../package/angular-google-place-0.0.2.tgz",
         "core-js": "^2.4.1",
+        "node-sass": "^4.7.2",
         "rxjs": "^5.5.2",
         "zone.js": "^0.8.14"
     },

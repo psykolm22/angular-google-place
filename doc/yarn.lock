@@ -254,6 +254,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-google-place@angular-google-place:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/angular-google-place/-/angular-google-place-0.0.2.tgz#47bb32d3348a878811c5370c7d04fb8a5dc8faaf"
+
 "angular-google-place@file:../package/angular-google-place-0.0.2.tgz":
   version "0.0.2"
   resolved "file:../package/angular-google-place-0.0.2.tgz#bdc9e1aa2893da4da1725b444c1ddfa801ee6e9b"
@@ -3193,7 +3197,7 @@ node-pre-gyp@^0.6.39:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
-node-sass@^4.3.0:
+node-sass@^4.3.0, node-sass@^4.7.2:
   version "4.7.2"
   resolved "https://registry.yarnpkg.com/node-sass/-/node-sass-4.7.2.tgz#9366778ba1469eb01438a9e8592f4262bcb6794e"
   dependencies:
