@@ -9,6 +9,10 @@ This is a Angular-Google-Place Module publish with Angular Format Package ( ng-p
 
 [Docs](https://psykolm22.github.io/angular-google-place) | [Demo](https://psykolm22.github.io/angular-google-place/) 
 
+#Release Notes
+Please take care of [Release Note](https://github.com/psykolm22/angular-google-place/releases) before creating issues.  
+
+
 # GitHub
 Please feel free to declare issues or contribute  : https://github.com/psykolm22/angular-google-place
 
