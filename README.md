@@ -23,8 +23,9 @@ YARN
 # Don't forget to add google api in your index.html
 * in your index.html:
 ```html
-<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+<script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=GOOGLE_API_KEY"></script>
 ```
+Replace by our Google api key .
 
 # Usage
 * Use it in your HTML elements, for example in your ***.component.html:
