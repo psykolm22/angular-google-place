@@ -33,6 +33,12 @@
   dependencies:
     tslib "^1.7.1"
 
+"@angular/cdk@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-5.0.2.tgz#9d2505e5736a14a6b59d226280a7600559e6d707"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@1.6.3":
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-1.6.3.tgz#63120b347fc8ee206f773074d25fdd4807c189e3"
@@ -139,6 +145,12 @@
 "@angular/language-service@^5.0.0":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-5.1.2.tgz#0c0579c2feb7dd9afb2576e9b602779d45b30810"
+
+"@angular/material@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-5.0.2.tgz#99b758fed20cb4a715aee2a65cf98301dcd521df"
+  dependencies:
+    tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@5.1.2":
   version "5.1.2"
@@ -257,6 +269,10 @@ amdefine@>=0.0.4:
 "angular-google-place@file:../package/angular-google-place-0.0.2.tgz":
   version "0.0.2"
   resolved "file:../package/angular-google-place-0.0.2.tgz#bdc9e1aa2893da4da1725b444c1ddfa801ee6e9b"
+
+"angular-google-place@file:../package/angular-google-place-0.0.3.tgz":
+  version "0.0.3"
+  resolved "file:../package/angular-google-place-0.0.3.tgz#0704f788b712d0943907faf53f062b09ae4a0bea"
 
 ansi-html@0.0.7:
   version "0.0.7"
@@ -2073,6 +2089,10 @@ globule@^1.0.0:
 graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+
+hammerjs@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
 handle-thing@^1.2.5:
   version "1.2.5"
