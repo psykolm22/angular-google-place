@@ -1,0 +1,95 @@
+<div id="locationField">
+    <input type="text" size="100" [(ngModel)]="address" [options]='options' (setAddress)="getAddress($event)" (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event' (country)='country=$event'
+        (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event' (vicinity)='vicinity=$event'
+        (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event' id="autocomplete" angularGooglePlace/>
+
+
+
+
+
+
+</div>
+<select class="form-control" [(ngModel)]="options.componentRestrictions.country">
+<option *ngFor="let country of CountryCodes" [value]="country.Code">{{ country.Name }}</option>
+</select>
+
+<table id="address">
+    <tr>
+        <td class="label">Street address</td>
+        <td class="slimField">
+            <input class="field" id="street_number" type="text" disabled="true" [(ngModel)]="street_number">
+        </td>
+        <td class="wideField" colspan="2"><input class="field" id="route" disabled="true" [(ngModel)]="street"></td>
+    </tr>
+    <tr>
+        <td class="label">City</td>
+        <td class="wideField" colspan="3"><input class="field" id="locality" disabled="true" [(ngModel)]="city"></td>
+    </tr>
+    <tr>
+        <td class="label">State</td>
+        <td class="slimField"><input class="field" id="administrative_area_level_1" disabled="true" [(ngModel)]="state"></td>
+        <td class="label">Postal code</td>
+        <td class="wideField"><input class="field" id="postal_code" disabled="true" [(ngModel)]="postal_code"></td>
+    </tr>
+    <tr>
+        <td class="label">district</td>
+        <td class="wideField" colspan="3"><input class="field" id="district" disabled="true" [(ngModel)]="district"></td>
+    </tr>
+    <tr>
+        <td class="label">Country</td>
+        <td class="wideField" colspan="3"><input class="field" id="country" disabled="true" [(ngModel)]="country"></td>
+    </tr>
+    <tr>
+        <td class="label">Lat</td>
+        <td class="wideField" colspan="3"><input class="field" id="lat" disabled="true" [(ngModel)]="lat"></td>
+    </tr>
+    <tr>
+        <td class="label">Lng</td>
+        <td class="wideField" colspan="3"><input class="field" id="lng" disabled="true" [(ngModel)]="lng"></td>
+    </tr>
+
+    <tr>
+        <td class="label">adr_address</td>
+        <td class="wideField" colspan="3">
+            <div [innerHTML]='adr_address'></div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="label">name</td>
+        <td class="wideField" colspan="3"><input class="field" id="name" disabled="true" [(ngModel)]="name"></td>
+    </tr>
+
+    <tr>
+        <td class="label">place_id</td>
+        <td class="wideField" colspan="3"><input class="field" id="place_id" disabled="true" [(ngModel)]="place_id"></td>
+    </tr>
+    <tr>
+        <td class="label">types</td>
+        <td class="wideField" colspan="3"><input class="field" id="types" disabled="true" [(ngModel)]="types"></td>
+    </tr>
+    <tr>
+        <td class="label">url</td>
+        <td class="wideField" colspan="3"><a href='{{url}}'> {{ url }} </a></td>
+    </tr>
+    <tr>
+        <td class="label">utc_offset</td>
+        <td class="wideField" colspan="3"><input class="field" id="utc_offset" disabled="true" [(ngModel)]="utc_offset"></td>
+    </tr>
+    <tr>
+        <td class="label">vicinity</td>
+        <td class="wideField" colspan="3"><input class="field" id="vicinity" disabled="true" [(ngModel)]="vicinity"></td>
+    </tr>
+
+</table>
+<div *ngFor="let photo of photos">
+    <div *ngFor="let url of photo.html_attributions">
+        <div class="img">
+            <img [src]="photo.getUrl({'maxWidth': 200, 'maxHeight': 200})">
+            <div class="desc">
+                <div [innerHTML]="url"></div>
+                <div> Original Size - width : {{ photo.width }} height : {{ photo.height }}</div>
+            </div>
+        </div>
+    </div>
+</div>

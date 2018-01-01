@@ -93,3 +93,7 @@
         </div>
     </div>
 </div>
+
+<child-directive></child-directive>
+
+<input class="form-control" [(ngModel)]="address" id="pac-input" type="text" (setAddress) = "getAddress($event)" [options]="{types: [],componentRestrictions: { country: 'US' }}" placeholder="Enter a location" angularGooglePlace/>

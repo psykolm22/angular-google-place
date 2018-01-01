@@ -10,7 +10,6 @@ export class AngularGooglePlaceConstantService {
         'country',
         'postal_code',
         'sublocality',
-        'establishment',
         'address',
         'geocode'
       ];

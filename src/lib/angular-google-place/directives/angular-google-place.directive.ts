@@ -6,7 +6,10 @@ import {
   ElementRef,
   EventEmitter,
   OnInit,
-  OnChanges
+  OnChanges,
+  HostListener,
+  DoCheck,
+  SimpleChanges
 } from '@angular/core';
 import {AngularGooglePlaceService} from '../services/index';
 import {Address} from '../models/index';
@@ -15,7 +18,9 @@ declare let google: any;
 @Directive({
   selector: '[angularGooglePlace]'
 })
-export class AngularGooglePlaceDirective implements OnInit, OnChanges {
+export class AngularGooglePlaceDirective implements OnInit {
+  DocheckCount= 0;
+  changelogs: Array<string> = [];
   @Input('options') options: any;
 
   @Output() CountryCodes: EventEmitter<any> = new EventEmitter();
@@ -81,16 +86,14 @@ export class AngularGooglePlaceDirective implements OnInit, OnChanges {
 
   place: Address;
 
-  constructor(private el: ElementRef, private service: AngularGooglePlaceService, private ngZone: NgZone) {
 
+
+  constructor(private el: ElementRef, private service: AngularGooglePlaceService, private ngZone: NgZone) {
   }
 
-  ngOnChanges(event: any) {
-    if (event.options.previousValue && event.options.currentValue) {
-      if (event.options.currentValue.componentRestrictions.country !== event.options.previousValue.componentRestrictions.country) {
-        this.setAutocompleteAndInvokeEvent(event.options.currentValue);
-      }
-    }
+  @HostListener('focus', ['$event.target'])
+  onFocus(target: any) {
+      this.setAutocompleteAndInvokeEvent(this.options);
   }
 
   ngOnInit() {
@@ -102,9 +105,10 @@ export class AngularGooglePlaceDirective implements OnInit, OnChanges {
       console.error(`google place api is not loaded at this time, angular-google-place won't work`);
       return;
     }
-
     this.setAutocompleteAndInvokeEvent(this.options);
+
   }
+
 
   setAutocompleteAndInvokeEvent(options: any) {
     this.autocomplete = new google.maps.places.Autocomplete(this.el.nativeElement, options);

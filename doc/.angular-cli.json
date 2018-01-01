@@ -6,7 +6,6 @@
     "apps": [{
         "root": "src",
         "outDir": "dist",
-        "baseHref": "/angular-google-place/",
         "assets": [
             "assets",
             "favicon.ico"
