@@ -266,10 +266,6 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-"angular-google-place@file:../package/angular-google-place-0.0.2.tgz":
-  version "0.0.2"
-  resolved "file:../package/angular-google-place-0.0.2.tgz#bdc9e1aa2893da4da1725b444c1ddfa801ee6e9b"
-
 "angular-google-place@file:../package/angular-google-place-0.0.3.tgz":
   version "0.0.3"
   resolved "file:../package/angular-google-place-0.0.3.tgz#0704f788b712d0943907faf53f062b09ae4a0bea"

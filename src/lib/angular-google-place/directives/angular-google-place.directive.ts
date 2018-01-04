@@ -19,15 +19,18 @@ declare let google: any;
   selector: '[angularGooglePlace]'
 })
 export class AngularGooglePlaceDirective implements OnInit {
-  DocheckCount= 0;
   changelogs: Array<string> = [];
   @Input('options') options: any;
 
   @Output() CountryCodes: EventEmitter<any> = new EventEmitter();
+  @Output() TypesOptions: EventEmitter<any> = new EventEmitter();
 
+  // unformatted address
   @Output() setAddress: EventEmitter<any> = new EventEmitter();
-  @Output() street_number: EventEmitter<any> = new EventEmitter();
+  // formatted address
+  @Output() FormatAddress: EventEmitter<any> = new EventEmitter();
 
+  @Output() street_number: EventEmitter<any> = new EventEmitter();
   @Output() postal_code: EventEmitter<any> = new EventEmitter();
   @Output() country: EventEmitter<any> = new EventEmitter();
   @Output() lat: EventEmitter<any> = new EventEmitter();
@@ -99,6 +102,7 @@ export class AngularGooglePlaceDirective implements OnInit {
   ngOnInit() {
 
     this.CountryCodes.emit(this.service.countryIsoCode());
+    this.TypesOptions.emit(this.service.typesOptions());
 
 
     if (typeof google === 'undefined' ) {
@@ -126,60 +130,71 @@ export class AngularGooglePlaceDirective implements OnInit {
   invokeEvent() {
     this.setAddress.emit(this.place);
 
-    this.street_number.emit(this.service.street_number(this.place.address_components) ?
-      this.service.street_number(this.place.address_components) :
-      null);
-    this.street.emit(this.service.street(this.place.address_components) ?
-      this.service.street(this.place.address_components) :
-      null);
-    this.city.emit(this.service.city(this.place.address_components) ?
-      this.service.city(this.place.address_components) :
-      null);
-    this.state.emit(this.service.state(this.place.address_components) ?
-      this.service.state(this.place.address_components) :
-      null);
-    this.country.emit(this.service.country(this.place.address_components) ?
-      this.service.country(this.place.address_components) :
-      null);
-    this.postal_code.emit(this.service.postal_code(this.place.address_components) ?
-      this.service.postal_code(this.place.address_components) :
-      null);
-    this.district.emit(this.service.administrative_area_level_2(this.place.address_components) ?
-      this.service.administrative_area_level_2(this.place.address_components) :
-      null);
-    this.lat.emit(this.place.geometry.location.lat() ?
-      this.place.geometry.location.lat() :
-      null);
-    this.lng.emit(this.place.geometry.location.lng() ?
-      this.place.geometry.location.lng() :
-      null);
-    this.adr_address.emit(this.place.adr_address ?
-      this.place.adr_address :
-      null);
-    this.formatted_address.emit(this.place.formatted_address ?
-      this.place.formatted_address :
-      null);
-    this.name.emit(this.place.name ?
-      this.place.name :
-      null);
-    this.place_id.emit(this.place.place_id ?
-      this.place.place_id :
-      null);
-    this.types.emit(this.place.types ?
-      this.place.types :
-      null);
-    this.url.emit(this.place.url ?
-      this.place.url :
-      null);
-    this.utc_offset.emit(this.place.utc_offset ?
-      this.place.utc_offset :
-      null);
-    this.vicinity.emit(this.place.vicinity ?
-      this.place.vicinity :
-      null);
-    this.photos.emit(this.place.photos ?
-      this.place.photos :
-      null);
+    const street_number = this.service.street_number(this.place.address_components);
+    this.street_number.emit( street_number);
+
+    const street = this.service.street(this.place.address_components);
+    this.street.emit(street);
+
+    const city = this.service.city(this.place.address_components);
+    this.city.emit(city);
+
+    const state = this.service.state(this.place.address_components);
+    this.state.emit(state);
+
+    const country = this.service.country(this.place.address_components);
+    this.country.emit(country);
+
+    const postal_code  = this.service.postal_code(this.place.address_components);
+    this.postal_code.emit(postal_code);
+
+    const district = this.service.administrative_area_level_2(this.place.address_components);
+    this.district.emit(district);
+
+    const lat = this.place.geometry.location.lat();
+    this.lat.emit( lat);
+
+    const lng = this.place.geometry.location.lng();
+    this.lng.emit(lng);
+
+    const adr_address = this.place.adr_address;
+    this.adr_address.emit(adr_address);
+
+    const formatted_address = this.place.formatted_address;
+    this.formatted_address.emit(formatted_address);
+
+    const name = this.place.name;
+    this.name.emit(name);
+
+    const place_id  = this.place.place_id;
+    this.place_id.emit(place_id);
+
+    const types = this.place.types;
+    this.types.emit(types);
+
+    const url = this.place.url;
+    this.url.emit(url);
+
+    const utc_offset = this.place.utc_offset;
+    this.utc_offset.emit(utc_offset);
+
+    const vicinity = this.place.vicinity;
+    this.vicinity.emit(vicinity);
+
+    const photos = this.place.photos;
+    this.photos.emit(photos);
+
+    this.FormatAddress.emit({
+      'street_number' : street_number,
+      'street' : street,
+      'city' : city,
+      'state' : state,
+      'country' : country,
+      'postal_code' : postal_code,
+      'district' : district ,
+      'lat' : lat,
+      'lng' : lng,
+    });
 
     /*
      DEPRECATED SINCE 2014

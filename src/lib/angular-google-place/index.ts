@@ -7,7 +7,8 @@ export {
   Location,
   Photos,
   AutoCompleteOptions,
-  AddressComponent
+  AddressComponent,
+  CountryCode
 } from './models/index';
 export { AngularGooglePlaceService} from './services/index';
 export { AngularGooglePlaceDirective} from './directives/angular-google-place.directive';

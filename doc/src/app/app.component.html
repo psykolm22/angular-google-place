@@ -1,17 +1,23 @@
-<div id="locationField">
-    <input type="text" size="100" [(ngModel)]="address" [options]='options' (setAddress)="getAddress($event)" (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event' (country)='country=$event'
-        (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event' (vicinity)='vicinity=$event'
-        (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event' id="autocomplete" angularGooglePlace/>
+<div class="example-container">
+    <mat-form-field class="example-full-width">
+        <input matInput type="text" size="100" [(ngModel)]="address" [options]='options' (setAddress)="getAddress($event)" (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event'
+            (country)='country=$event' (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event'
+            (vicinity)='vicinity=$event' (FormatAddress)='FormatAddress($event)' (photos)='photos=$event' (airport)='airport=$event' placeholder="Search..." (CountryCodes)='CountryCodes=$event' (TypesOptions)='TypesOptions=$event' id="autocomplete" angularGooglePlace/>
 
-
-
-
-
-
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-select class="form-control" [(ngModel)]="options.type" placeholder="Types">
+            <mat-option *ngFor="let type of typesOptions" [value]="[type]">{{ type }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-select class="form-control" [(ngModel)]="options.componentRestrictions.country" placeholder="Country">
+            <mat-option *ngFor="let country of CountryCodes" [value]="country.Code">{{ country.Name }}</mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>
-<select class="form-control" [(ngModel)]="options.componentRestrictions.country">
-<option *ngFor="let country of CountryCodes" [value]="country.Code">{{ country.Name }}</option>
-</select>
+
+
 
 <table id="address">
     <tr>
@@ -94,3 +100,7 @@
     </div>
 </div>
 <button mat-button (click)="openDialog()">Example in Dialog</button>
+
+<input type="text" size="100" (postal_code)='savePostalCode($event)' [(ngModel)]="address2" [options]='options' (setAddress)="getAddress($event)" (CountryCodes)='CountryCodes=$event' (TypesOptions)='TypesOptions=$event' id="autocomplete2" angularGooglePlace/>
+
+<h5> postalCode = {{postalCode}} </h5>

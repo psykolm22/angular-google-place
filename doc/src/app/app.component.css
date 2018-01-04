@@ -15,13 +15,6 @@ body {
     width: 480px;
 }
 
-#autocomplete {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 99%;
-}
-
 .label {
     text-align: right;
     font-weight: bold;
@@ -52,11 +45,6 @@ body {
     width: 200px;
 }
 
-#locationField {
-    height: 20px;
-    margin-bottom: 2px;
-}
-
 div.img {
     margin: 5px;
     border: 1px solid #ccc;
@@ -76,4 +64,23 @@ div.img img {
 div.desc {
     padding: 15px;
     text-align: center;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
 }

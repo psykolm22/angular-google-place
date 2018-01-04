@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AddressComponent} from '../models/index';
+import {AddressComponent, CountryCode} from '../models/index';
 import {AngularGooglePlaceConstantService} from '../constants/index';
 
 @Injectable()
@@ -166,12 +166,13 @@ export class AngularGooglePlaceService {
     return this.find(address_components, 'transit_station');
   }
 
-  countryIsoCode() {
+  // countryIsoCode
+  countryIsoCode(): CountryCode[] {
     return this.constant.countryIsoCode();
   }
 
   // Types options
-  TypesOptions() {
+  typesOptions(): string[] {
     return this.constant.types_options();
   }
 

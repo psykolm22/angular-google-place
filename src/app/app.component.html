@@ -1,18 +1,16 @@
 <div id="locationField">
     <input type="text" size="100" [(ngModel)]="address" [options]='options' (setAddress)="getAddress($event)" (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event' (country)='country=$event'
         (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event' (vicinity)='vicinity=$event'
-        (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event' id="autocomplete" angularGooglePlace/>
-
-
-
-
-
-
+        (photos)='photos=$event' (FormatAddress)='FormatAddress($event)' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event' (TypesOptions)='TypesOptions=$event' id="autocomplete" angularGooglePlace/>
 </div>
-<select class="form-control" [(ngModel)]="options.componentRestrictions.country">
+
+<select class="form-control" [(ngModel)]="options.type" (ngModelChange)="onChange($event)">
+  <option *ngFor="let type of typesOptions" [value]="[type]">{{ type }}</option>
+  </select>
+
+<select class="form-control" [(ngModel)]="options.componentRestrictions.country" (ngModelChange)="onChange($event)">
 <option *ngFor="let country of CountryCodes" [value]="country.Code">{{ country.Name }}</option>
 </select>
-
 <table id="address">
     <tr>
         <td class="label">Street address</td>

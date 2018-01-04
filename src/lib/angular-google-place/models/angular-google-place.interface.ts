@@ -66,3 +66,8 @@ export interface AddressComponent {
   types: Array<string>;
   [name: string]: any;
 }
+
+export interface CountryCode {
+  Name: string;
+  Code: string;
+}

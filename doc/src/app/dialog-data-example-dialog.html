@@ -4,10 +4,6 @@
         (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event' id="autocomplete" angularGooglePlace/>
 
 
-
-
-
-
 </div>
 <select class="form-control" [(ngModel)]="options.componentRestrictions.country">
 <option *ngFor="let country of CountryCodes" [value]="country.Code">{{ country.Name }}</option>

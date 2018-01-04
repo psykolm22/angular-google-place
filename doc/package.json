@@ -6,7 +6,7 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "ng build --prod --aot=false --build-optimizer=false",
+        "build": "ng build --prod --aot=false --build-optimizer=false -bh angular-google-place",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"

@@ -3,11 +3,19 @@ This is a Angular-Google-Place Module publish with Angular Format Package ( ng-p
 
 [![NPM](https://nodei.co/npm/angular-google-place.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/angular-google-place/)
 
-[![devDependency Status](https://gemnasium.com/badges/github.com/psykolm22/angular-google-place.svg)](https://gemnasium.com/github.com/psykolm22/ng2-google-place-autocomplete) [![npm](http://img.shields.io/npm/v/angular-google-place.svg?style=flat)](https://www.npmjs.org/package/angular-google-place) [![license](https://img.shields.io/github/license/psykolm22/angular-google-place.svg)]()
+[![devDependency Status](https://gemnasium.com/badges/github.com/psykolm22/angular-google-place.svg)](https://gemnasium.com/github.com/psykolm22/ng2-google-place-autocomplete) [![npm](http://img.shields.io/npm/v/angular-google-place.svg?style=flat)](https://www.npmjs.org/package/angular-google-place) 
 [![npm Downloads](https://img.shields.io/npm/dw/angular-google-place.svg?style=flat-square)](https://www.npmjs.com/package/ng-packagr)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat-square)](https://renovateapp.com/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bc6faa59e1904c2c95217666541ff3b3)](https://www.codacy.com/app/pierrenedelec/angular-google-place?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=psykolm22/angular-google-place&amp;utm_campaign=Badge_Grade)
 
-[Docs](https://psykolm22.github.io/angular-google-place) | [Demo](https://psykolm22.github.io/angular-google-place/) 
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![TypeScript](https://badges.frapsoft.com/typescript/love/typescript.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
+[![license](https://img.shields.io/github/license/psykolm22/angular-google-place.svg)]()
+[![forthebadge](http://forthebadge.com/images/badges/built-by-developers.svg)](http://forthebadge.com)
+
+
+[Docs](https://psykolm22.github.io/angular-google-place/docs/) | [Demo](https://psykolm22.github.io/angular-google-place/) 
+
 
 #Release Notes
 Please take care of [Release Note](https://github.com/psykolm22/angular-google-place/releases) before creating issues.  
@@ -40,6 +48,7 @@ Replace by our Google api key .
 <input type="text" [(ngModel)] = "address" 
  [options]='options' 
  (setAddress) = "getAddress($event)"
+ (FormatAddress)="getFormattedAddress($event)"
  (street_number) = 'street_number=$event'
  (street)= 'street=$event'
  (city)= 'city=$event'
@@ -57,20 +66,23 @@ Replace by our Google api key .
  (utc_offset)='utc_offset=$event' 
  (vicinity)='vicinity=$event' 
  (photos)='photos=$event' 
- (airport)='airport=$event' 
  (CountryCodes)='CountryCodes=$event'
   id="autocomplete"
  angularGooglePlace/> 
 ```
 * Add in your ***.component.ts:
+* check CHANGELOG.md  , types have change to type.
 ```typeScript
 import { Address } from 'angular-google-place';
 
  export class AppComponent {
-  public options = {types: ['address'], componentRestrictions: { country: 'FR' }};
+  public options = {type : 'address', componentRestrictions: { country: 'FR' }};
   getAddress(place: Address) {
          console.log('Address', place);
      }
+  getFormattedAddress(event: any) {
+         console.log(event);
+     }   
 }
 ```
 
@@ -88,12 +100,21 @@ import {AngularGooglePlaceModule} from 'angular-google-place';
 Options for Google Search
 * Choose one type from
 ```
-  [ '(cities)', '(regions)', 'country', 'postal_code', 'sublocality', 'establishment', 'address', 'geocode'] 
+  [ '(cities)',
+        '(regions)',
+        'country',
+        'postal_code',
+        'locality',
+        'sublocality',
+        'address',
+        'geocode',
+        'administrative_area_level_1',
+        'administrative_area_level_2',] 
 ```  
 * country ( dynamic change allow) : CountryCode ISO 3166-1 Alpha-2 ( see demo )
 ```html  
 [options]="{
-    types: [],
+    type: 'address',
     componentRestrictions: { country: 'FR' }
     }"
 ```
