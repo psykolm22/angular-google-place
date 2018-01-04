@@ -10,6 +10,7 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
+        "npmpublish": "cd package && npm publish",
         "doc:clean": "rimraf doc/package-lock.json doc/node_modules",
         "prepack-lib": "yarn package",
         "pack-lib": "cd package && npm pack",

@@ -3,7 +3,8 @@ This is a Angular-Google-Place Module publish with Angular Format Package ( ng-p
 
 [![NPM](https://nodei.co/npm/angular-google-place.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/angular-google-place/)
 
-[![devDependency Status](https://gemnasium.com/badges/github.com/psykolm22/angular-google-place.svg)](https://gemnasium.com/github.com/psykolm22/ng2-google-place-autocomplete) [![npm](http://img.shields.io/npm/v/angular-google-place.svg?style=flat)](https://www.npmjs.org/package/angular-google-place) 
+[![devDependency Status](https://gemnasium.com/badges/github.com/psykolm22/angular-google-place.svg)](https://gemnasium.com/github.com/psykolm22/angular-google-place) 
+[![npm](http://img.shields.io/npm/v/angular-google-place.svg?style=flat)](https://www.npmjs.org/package/angular-google-place) 
 [![npm Downloads](https://img.shields.io/npm/dw/angular-google-place.svg?style=flat-square)](https://www.npmjs.com/package/ng-packagr)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg?style=flat-square)](https://renovateapp.com/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/bc6faa59e1904c2c95217666541ff3b3)](https://www.codacy.com/app/pierrenedelec/angular-google-place?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=psykolm22/angular-google-place&amp;utm_campaign=Badge_Grade)
