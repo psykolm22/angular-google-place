@@ -83,7 +83,7 @@ export class AngularGooglePlaceDirective implements OnInit {
    @Output() transit_station: EventEmitter<any>  = new EventEmitter();
    */
 
-  autocomplete: any;
+  autocomplete: any = null;
 
   trigger: any;
 
@@ -115,15 +115,19 @@ export class AngularGooglePlaceDirective implements OnInit {
 
 
   setAutocompleteAndInvokeEvent(options: any) {
-    this.autocomplete = new google.maps.places.Autocomplete(this.el.nativeElement, options);
-    this.trigger = this.autocomplete.addListener('place_changed', () => {
-      this.ngZone.run(() => {
-        this.place = this.autocomplete.getPlace();
-        if (this.place && this.place.place_id) {
-          this.invokeEvent();
-        }
+    if(this.autocomplete === null) {
+      this.autocomplete = new google.maps.places.Autocomplete(this.el.nativeElement, options);
+      this.trigger = this.autocomplete.addListener('place_changed', () => {
+        this.ngZone.run(() => {
+          this.place = this.autocomplete.getPlace();
+          if (this.place && this.place.place_id) {
+            this.invokeEvent();
+          }
+        });
       });
-    });
+    } else {
+      this.autocomplete.setOptions(options);
+    }
   }
 
 
