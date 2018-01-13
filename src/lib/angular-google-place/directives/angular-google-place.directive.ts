@@ -118,7 +118,9 @@ export class AngularGooglePlaceDirective implements OnInit {
     this.autocomplete = new google.maps.places.Autocomplete(this.el.nativeElement, options);
     this.trigger = this.autocomplete.addListener('place_changed', () => {
       this.ngZone.run(() => {
+        console.log('ngZone.run');
         this.place = this.autocomplete.getPlace();
+        console.log(this.place);
         if (this.place && this.place.place_id) {
           this.invokeEvent();
         }
@@ -128,6 +130,7 @@ export class AngularGooglePlaceDirective implements OnInit {
 
 
   invokeEvent() {
+    console.log('invokeEvent');
     this.setAddress.emit(this.place);
 
     const street_number = this.service.street_number(this.place.address_components);
