@@ -17,7 +17,6 @@
         "predoc:serve": "yarn pack-lib && yarn doc:clean",
         "doc:serve": "cd doc && yarn && yarn add file:../package/angular-google-place-0.0.3.tgz --no-save && yarn start",
         "package": "ng-packagr -p src/lib/ng-package.json",
-        "prepackage": "./predeploy.sh",
         "release": "standard-version --message 'release: cut v%s'",
         "buildit": "yarn doc:build && cd doc && ngh",
         "predoc:build": "cd doc && yarn && yarn add file:../package/angular-google-place-0.0.3.tgz --no-save && yarn build",
