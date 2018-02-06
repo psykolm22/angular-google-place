@@ -93,9 +93,8 @@ export class AngularGooglePlaceDirective implements OnInit {
 
   @HostListener('focus', ['$event.target'])
   onFocus(target: any) {
-    if (this.options) {
-      this.autocomplete.setTypes([this.options.type]);
-      this.autocomplete.setComponentRestrictions(this.options.componentRestrictions);
+    if (this.autocomplete && this.options) {
+      this.autocomplete.setOptions(this.options);
     }
   }
 
