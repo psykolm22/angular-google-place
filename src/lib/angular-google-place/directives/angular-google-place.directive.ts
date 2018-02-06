@@ -6,10 +6,7 @@ import {
   ElementRef,
   EventEmitter,
   OnInit,
-  OnChanges,
-  HostListener,
-  DoCheck,
-  SimpleChanges
+  HostListener
 } from '@angular/core';
 import {AngularGooglePlaceService} from '../services/index';
 import {Address} from '../models/index';
