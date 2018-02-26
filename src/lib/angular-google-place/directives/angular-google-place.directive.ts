@@ -49,6 +49,8 @@ export class AngularGooglePlaceDirective implements OnInit {
   @Output() state: EventEmitter<any> = new EventEmitter();
   @Output() district: EventEmitter<any> = new EventEmitter();
 
+  @Output() noPlaceFound: EventEmitter<boolean> = new EventEmitter();
+
 
   /*
    NOT USED YET
@@ -121,6 +123,8 @@ export class AngularGooglePlaceDirective implements OnInit {
         this.place = this.autocomplete.getPlace();
         if (this.place && this.place.place_id) {
           this.invokeEvent();
+        } else {
+          this.noPlaceFound.emit(true);
         }
       });
     });
