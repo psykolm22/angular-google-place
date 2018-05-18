@@ -1,6 +1,6 @@
 {
-    "name": "angular-google-place",
-    "version": "0.0.3",
+    "name": "ngx-google-places",
+    "version": "0.1.0",
     "license": "MIT",
     "author": "Pierre Nédélec",
     "peerDependencies": {

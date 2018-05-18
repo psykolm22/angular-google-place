@@ -6,10 +6,7 @@ import {
   ElementRef,
   EventEmitter,
   OnInit,
-  OnChanges,
-  HostListener,
-  DoCheck,
-  SimpleChanges
+  HostListener
 } from '@angular/core';
 import {AngularGooglePlaceService} from '../services/index';
 import {Address} from '../models/index';
@@ -96,7 +93,9 @@ export class AngularGooglePlaceDirective implements OnInit {
 
   @HostListener('focus', ['$event.target'])
   onFocus(target: any) {
-      this.setAutocompleteAndInvokeEvent(this.options);
+    if (this.autocomplete && this.options) {
+      this.autocomplete.setOptions(this.options);
+    }
   }
 
   ngOnInit() {
