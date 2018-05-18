@@ -1,6 +1,6 @@
 {
   "name": "ngx-google-places",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Ricardo Mello",
   "scripts": {
@@ -15,12 +15,12 @@
     "prepack-lib": "yarn package",
     "pack-lib": "cd package && npm pack",
     "predoc:serve": "yarn pack-lib && yarn doc:clean",
-    "doc:serve": "cd doc && yarn && yarn add file:../package/angular-google-places-0.1.0.tgz --no-save && yarn start",
+    "doc:serve": "cd doc && yarn && yarn add file:../package/angular-google-places-0.1.1.tgz --no-save && yarn start",
     "package": "ng-packagr -p src/lib/ng-package.json",
     "prepackage": "./predeploy.sh",
     "release": "standard-version --message 'release: cut v%s'",
     "buildit": "yarn doc:build && cd doc && ngh",
-    "predoc:build": "cd doc && yarn && yarn add file:../package/angular-google-places-0.1.0.tgz --no-save && yarn build",
+    "predoc:build": "cd doc && yarn && yarn add file:../package/angular-google-places-0.1.1.tgz --no-save && yarn build",
     "doc:build": "compodoc -p src/lib/tsconfig-compodoc.json -d doc/dist/docs"
   },
   "private": true,
